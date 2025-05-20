@@ -7,8 +7,9 @@ import { fetchData } from '../../api';
 import ImageModal from '../ImageModal/ImageModal';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import type { Image } from '../../types/types';
+import type { FC } from 'react';
 
-const App = () => {
+const App: FC = () => {
   const [images, setImages] = useState<Image[]>([]);
   const [query, setQuery] = useState<string>('');
   const [page, setPage] = useState<number>(1);
@@ -20,7 +21,7 @@ const App = () => {
 
   const lastImageRef = useRef<HTMLDivElement | null>(null);
 
-  const handleSearch = (newQuery: string) => {
+  const handleSearch = (newQuery: string): void => {
     if (newQuery === query) {
       return;
     }
@@ -54,16 +55,16 @@ const App = () => {
     getImages();
   }, [query, page]);
 
-  const loadMore = () => {
+  const loadMore = (): void => {
     setPage(prev => prev + 1);
   };
 
-  const openModal = (image: Image) => {
+  const openModal = (image: Image): void => {
     setModalIsOpen(true);
     setSelectedImage(image);
   };
 
-  const closeModal = () => {
+  const closeModal = (): void => {
     setModalIsOpen(false);
     setSelectedImage(null);
   };
