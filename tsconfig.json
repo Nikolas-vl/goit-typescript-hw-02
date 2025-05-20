@@ -1,7 +1,57 @@
+
 {
+  "compilerOptions": {
+    // Language and target settings
+    "target": "ES2020",
+    "module": "ESNext",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+
+    // Module system and bundler support
+    "moduleResolution": "bundler",
+    "moduleDetection": "force",
+    "verbatimModuleSyntax": true,
+    "allowImportingTsExtensions": true,
+
+    // File/module handling
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+
+    // Compiler behavior
+    "noEmit": true,
+    "isolatedModules": true,
+    "useDefineForClassFields": true,
+    "sourceMap": true,
+    "jsx": "react-jsx",
+
+    // Type checking and safety
+    "strict": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+    "noImplicitReturns": true,
+    "exactOptionalPropertyTypes": true,
+    "erasableSyntaxOnly": false,
+
+    // Decorators support
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+    // Additional settings
+    "types": []
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"],
+
+  
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
   ]
+
 }

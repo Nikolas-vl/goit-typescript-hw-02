@@ -1,0 +1,28 @@
+.btnContainer{
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.btn {
+  padding: 12px 24px;
+  font-size: 18px;
+  background-color: #299e75;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 250ms ease, transform 150ms ease;
+  box-shadow: 0 1px 1px rgba(37, 194, 139, 0.3);
+}
+
+.btn:hover,
+.btn:focus {
+  box-shadow: 0 1px 1px 1px #25c28b;
+  background-color: #25c28b;
+  
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
