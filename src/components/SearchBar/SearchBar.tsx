@@ -1,13 +1,21 @@
 import toast, { Toaster } from 'react-hot-toast';
 import s from './SearchBar.module.css';
-const SearchBar = ({ onSubmit }) => {
-  const handleSubmit = e => {
+import type { FC, FormEvent } from 'react';
+
+type Props = {
+  onSubmit: (value: string) => void;
+};
+
+const SearchBar: FC<Props> = ({ onSubmit }) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    const form = e.target;
-    const value = form.elements.search.value.trim();
+    const form = e.currentTarget;
+    const input = form.elements.namedItem('search') as HTMLInputElement;
+    const value = input.value.trim();
 
     if (value === '') {
-      return toast.error('Search bar is empty!!!');
+      toast.error('Search bar is empty!!!');
+      return;
     }
 
     onSubmit(value);
