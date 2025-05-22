@@ -1,6 +1,15 @@
-import ImageCard from '../ImageCard/ImageCard';
+import ImageCard from '../ImageCard/ImageCard.js';
 import s from './ImageGallery.module.css';
-const ImageGallery = ({ images, openModal, lastImageRef }) => {
+import type { FC, RefObject } from 'react';
+import type { Image } from '../../types/types';
+
+type ImageGalleryProps = {
+  images: Image[];
+  openModal: (image: Image) => void;
+  lastImageRef: RefObject<HTMLLIElement>;
+};
+
+const ImageGallery: FC<ImageGalleryProps> = ({ images, openModal, lastImageRef }) => {
   if (!images || images.length === 0) {
     return null;
   }

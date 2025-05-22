@@ -1,8 +1,16 @@
 import Modal from 'react-modal';
+import type { FC } from 'react';
+import type { Image } from '../../types/types';
 
 Modal.setAppElement('#root');
 
-const ImageModal = ({ openModal, closeModal, image }) => {
+type ImageModalProps = {
+  openModal: boolean;
+  closeModal: () => void;
+  image: Image | null;
+};
+
+const ImageModal: FC<ImageModalProps> = ({ openModal, closeModal, image }) => {
   if (!image) {
     return null;
   }
