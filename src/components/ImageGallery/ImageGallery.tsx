@@ -1,7 +1,7 @@
-import ImageCard from '../ImageCard/ImageCard.js';
+import ImageCard from '../ImageCard/ImageCard.tsx';
 import s from './ImageGallery.module.css';
 import type { FC, RefObject } from 'react';
-import type { Image } from '../../types/types';
+import type { Image } from '../../types/types.ts';
 
 type ImageGalleryProps = {
   images: Image[];

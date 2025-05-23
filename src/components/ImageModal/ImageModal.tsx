@@ -1,6 +1,6 @@
 import Modal from 'react-modal';
 import type { FC } from 'react';
-import type { Image } from '../../types/types';
+import type { Image } from '../../types/types.ts';
 
 Modal.setAppElement('#root');
 

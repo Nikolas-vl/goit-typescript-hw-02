@@ -1,6 +1,6 @@
 import s from './ImageCard.module.css';
 import type { FC } from 'react';
-import type { Image } from '../../types/types';
+import type { Image } from '../../types/types.ts';
 
 type ImageCardProps = {
   image: Image;

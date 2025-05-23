@@ -1,4 +1,4 @@
-import toast, { Toaster } from 'react-hot-toast';
+import { toast, Toaster } from 'react-hot-toast';
 import s from './SearchBar.module.css';
 import type { FC, FormEvent } from 'react';
 

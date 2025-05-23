@@ -1,12 +1,12 @@
-import SearchBar from '../SearchBar/SearchBar';
-import ImageGallery from '../ImageGallery/ImageGallery';
-import Loader from '../Loader/Loader';
-import LoadMoreBtn from '../LoadMoreBtn/LoadMoreBtn';
+import SearchBar from '../SearchBar/SearchBar.tsx';
+import ImageGallery from '../ImageGallery/ImageGallery.tsx';
+import Loader from '../Loader/Loader.tsx';
+import LoadMoreBtn from '../LoadMoreBtn/LoadMoreBtn.tsx';
 import { useEffect, useState, useRef } from 'react';
-import { fetchData } from '../../api';
-import ImageModal from '../ImageModal/ImageModal';
-import ErrorMessage from '../ErrorMessage/ErrorMessage';
-import type { Image } from '../../types/types';
+import { fetchData } from '../../api.ts';
+import ImageModal from '../ImageModal/ImageModal.tsx';
+import ErrorMessage from '../ErrorMessage/ErrorMessage.tsx';
+import type { Image } from '../../types/types.ts';
 import type { FC } from 'react';
 
 const App: FC = () => {
