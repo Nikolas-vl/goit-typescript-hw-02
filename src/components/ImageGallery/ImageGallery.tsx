@@ -5,11 +5,11 @@ import type { Image } from '../../types/types';
 
 type ImageGalleryProps = {
   images: Image[];
-  openModal: (image: Image) => void;
-  lastImageRef: RefObject<HTMLLIElement>;
+  handleOpenModal: (image: Image) => void;
+  lastImageRef: RefObject<HTMLLIElement | null>;
 };
 
-const ImageGallery: FC<ImageGalleryProps> = ({ images, openModal, lastImageRef }) => {
+const ImageGallery: FC<ImageGalleryProps> = ({ images, handleOpenModal, lastImageRef }) => {
   if (!images || images.length === 0) {
     return null;
   }
@@ -18,7 +18,7 @@ const ImageGallery: FC<ImageGalleryProps> = ({ images, openModal, lastImageRef }
     <div>
       <ul className={s.gallery}>
         {images.map((image, index) => (
-          <li className={s.item} key={image.id} onClick={() => openModal(image)} ref={index === images.length - 1 ? lastImageRef : null}>
+          <li className={s.item} key={image.id} onClick={() => handleOpenModal(image)} ref={index === images.length - 1 ? lastImageRef : null}>
             <ImageCard image={image} />
           </li>
         ))}

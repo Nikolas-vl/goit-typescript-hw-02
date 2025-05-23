@@ -1,56 +1,35 @@
-
 {
   "compilerOptions": {
-    // Language and target settings
-    "target": "ES2020",
+    // Target & language features
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "module": "ESNext",
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
 
-    // Module system and bundler support
+    // Module/bundler support
     "moduleResolution": "bundler",
-    "moduleDetection": "force",
-    "verbatimModuleSyntax": true,
     "allowImportingTsExtensions": true,
-
-    // File/module handling
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "allowJs": true,
-    "skipLibCheck": true,
-
-    // Compiler behavior
-    "noEmit": true,
+    "verbatimModuleSyntax": true,
     "isolatedModules": true,
-    "useDefineForClassFields": true,
-    "sourceMap": true,
+
+    // React & JSX
     "jsx": "react-jsx",
 
-    // Type checking and safety
+    // Type system & checks
     "strict": true,
-    "strictNullChecks": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true,
-    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
-    "erasableSyntaxOnly": false,
 
-    // Decorators support
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
+    // JS & interop
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
 
-    // Additional settings
-    "types": []
+    // Output
+    "noEmit": true
   },
-  "include": ["src"],
-  "exclude": ["node_modules"],
-
-  
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-  ],
-
+  "include": ["src"]
 }

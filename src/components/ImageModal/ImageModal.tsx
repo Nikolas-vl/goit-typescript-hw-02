@@ -5,18 +5,18 @@ import type { Image } from '../../types/types';
 Modal.setAppElement('#root');
 
 type ImageModalProps = {
-  openModal: boolean;
+  isModalOpen: boolean;
   closeModal: () => void;
   image: Image | null;
 };
 
-const ImageModal: FC<ImageModalProps> = ({ openModal, closeModal, image }) => {
+const ImageModal: FC<ImageModalProps> = ({ isModalOpen, closeModal, image }) => {
   if (!image) {
     return null;
   }
   return (
     <Modal
-      isOpen={openModal}
+      isOpen={isModalOpen}
       onRequestClose={closeModal}
       contentLabel='Image Modal'
       shouldCloseOnOverlayClick={true}

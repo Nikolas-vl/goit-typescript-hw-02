@@ -15,11 +15,11 @@ const App: FC = () => {
   const [page, setPage] = useState<number>(1);
   const [error, setError] = useState<string | null>(null);
   const [totalPages, setTotalPages] = useState<number>(0);
-  const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedImage, setSelectedImage] = useState<Image | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const lastImageRef = useRef<HTMLDivElement | null>(null);
+  const lastImageRef = useRef<HTMLLIElement | null>(null);
 
   const handleSearch = (newQuery: string): void => {
     if (newQuery === query) {
@@ -35,7 +35,7 @@ const App: FC = () => {
       return;
     }
 
-    const getImages = async () => {
+    const getImages = async (): Promise<void> => {
       try {
         setIsLoading(true);
         setError(null);
@@ -59,13 +59,13 @@ const App: FC = () => {
     setPage(prev => prev + 1);
   };
 
-  const openModal = (image: Image): void => {
-    setModalIsOpen(true);
+  const handleOpenModal = (image: Image): void => {
+    setIsModalOpen(true);
     setSelectedImage(image);
   };
 
   const closeModal = (): void => {
-    setModalIsOpen(false);
+    setIsModalOpen(false);
     setSelectedImage(null);
   };
 
@@ -79,10 +79,10 @@ const App: FC = () => {
     <div>
       <SearchBar onSubmit={handleSearch} />
       {error && <ErrorMessage message={error} />}
-      <ImageGallery images={images} openModal={openModal} lastImageRef={lastImageRef} />
+      <ImageGallery images={images} handleOpenModal={handleOpenModal} lastImageRef={lastImageRef} />
       {isLoading && <Loader />}
       {images.length > 0 && page < totalPages && <LoadMoreBtn loadMore={loadMore} />}
-      <ImageModal openModal={modalIsOpen} closeModal={closeModal} image={selectedImage} />
+      <ImageModal isModalOpen={isModalOpen} closeModal={closeModal} image={selectedImage} />
     </div>
   );
 };
